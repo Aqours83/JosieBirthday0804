@@ -4,29 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fffdf9" />
-    <meta name="description" content="A birthday surprise for Josie — August 4." />
+    <meta
+      name="description"
+      content="A birthday surprise for Josie — August 4."
+    />
     <title>Happy Birthday, Josie!</title>
     <link rel="stylesheet" href="styles.css?v=7" />
   </head>
+
   <body>
     <div class="bow-field" aria-hidden="true">
-      <img src="assets/bow-small.png" width="256" height="225" alt="" class="bow bow-1" />
-      <img src="assets/bow-small.png" width="256" height="225" alt="" class="bow bow-2" />
-      <img src="assets/bow-small.png" width="256" height="225" alt="" class="bow bow-3" />
-      <img src="assets/bow-small.png" width="256" height="225" alt="" class="bow bow-4" />
-      <img src="assets/bow-small.png" width="256" height="225" alt="" class="bow bow-5" />
-      <img src="assets/bow-small.png" width="256" height="225" alt="" class="bow bow-6" />
-      <img src="assets/bow-small.png" width="256" height="225" alt="" class="bow bow-7" />
-      <img src="assets/bow-small.png" width="256" height="225" alt="" class="bow bow-8" />
+      <img src="assets/bow.png" alt="" class="bow bow-1" />
+      <img src="assets/bow.png" alt="" class="bow bow-2" />
+      <img src="assets/bow.png" alt="" class="bow bow-3" />
+      <img src="assets/bow.png" alt="" class="bow bow-4" />
+      <img src="assets/bow.png" alt="" class="bow bow-5" />
+      <img src="assets/bow.png" alt="" class="bow bow-6" />
+      <img src="assets/bow.png" alt="" class="bow bow-7" />
+      <img src="assets/bow.png" alt="" class="bow bow-8" />
     </div>
 
     <main>
-      <section class="scene intro is-active" id="intro" aria-labelledby="birthday-title">
+      <section
+        class="scene intro is-active"
+        id="intro"
+        aria-labelledby="birthday-title"
+      >
         <div class="intro-content">
           <p class="eyebrow">A tiny surprise for you</p>
+
           <div class="title-reveal">
-            <h1 id="birthday-title">Happy Birthday, Josie! <span>· 8.4</span></h1>
+            <h1 id="birthday-title">
+              Happy Birthday, Josie! <span>· 8.4</span>
+            </h1>
           </div>
+
           <button class="open-button" id="open-wishes" type="button">
             <span>来看看生日祝福吧</span>
             <span aria-hidden="true" class="button-arrow">↗</span>
@@ -34,21 +46,45 @@
         </div>
       </section>
 
-      <section class="scene wishes" id="wishes" aria-label="给 Josie 的生日祝福" aria-hidden="true">
+      <section
+        class="scene wishes"
+        id="wishes"
+        aria-label="给 Josie 的生日祝福"
+        aria-hidden="true"
+      >
         <header class="wishes-heading">
           <p class="eyebrow">Made with love</p>
-          <p class="counter" aria-live="polite"><span id="current-number">01</span> / 06</p>
+
+          <p class="counter" aria-live="polite">
+            <span id="current-number">01</span> / 06
+          </p>
         </header>
 
         <div class="postcard-stage">
-          <button class="nav-button nav-prev" id="previous-card" type="button" aria-label="上一张明信片">
-            <span aria-hidden="true">←</span><small>上一张</small>
+          <button
+            class="nav-button nav-prev"
+            id="previous-card"
+            type="button"
+            aria-label="上一张明信片"
+          >
+            <span aria-hidden="true">←</span>
+            <small>上一张</small>
           </button>
 
-          <div class="postcard-stack" id="postcard-stack" aria-live="polite"></div>
+          <div
+            class="postcard-stack"
+            id="postcard-stack"
+            aria-live="polite"
+          ></div>
 
-          <button class="nav-button nav-next" id="next-card" type="button" aria-label="下一张明信片">
-            <small>下一张</small><span aria-hidden="true">→</span>
+          <button
+            class="nav-button nav-next"
+            id="next-card"
+            type="button"
+            aria-label="下一张明信片"
+          >
+            <small>下一张</small>
+            <span aria-hidden="true">→</span>
           </button>
         </div>
 
