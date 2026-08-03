@@ -1,10 +1,6 @@
 # Happy Birthday, Josie!
 
-A responsive, static birthday website with a reveal intro and six animated postcard wishes.
 
-## Edit the wishes
-
-Open `script.js` and replace each card's `title`, `text`, and `from` values. The six images live in `assets/`.
 
 ## Preview
 
