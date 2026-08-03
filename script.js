@@ -3,7 +3,7 @@ const cards = [
   { image: "assets/photo-2.webp", title: "第二封祝福", text: "愿新的一岁，喜欢的事情都能坚持，期待的答案都慢慢靠近。", from: "— 卓欣怡" },
   { image: "assets/photo-3.webp", title: "第三封祝福", text: "这一页先留白，等一句只属于 Josie 的真心话。", from: "— 陈茉晗" },
   { image: "assets/photo-4.webp", title: "第四封祝福", text: "愿每一次出发都有好风景，每一次回头都有温暖的人。", from: "— 袁悠然" },
-  { image: "assets/photo-5.webp", title: "第五封祝福", text: "祝福还在收集中，很快就会把这一页认真写满。", from: "— 马怿玮" },
+  { image: "assets/photo-5.webp", title: "第五封祝福", text: "淇元姐生日快乐🎂🎈🎁🎊重复的话不说了[呲牙]祝你新的一岁在Duke继续闪闪发光，以后的每一天都健康平安幸福快乐充实每一天🥳😊☺️！", from: "— 马怿玮" },
   { image: "assets/photo-6.webp", title: "第六封祝福", text: "生日快乐，愿新的一岁自由、明亮，也一直被爱包围。", from: "— 马雪琪" },
 ];
 
