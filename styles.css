@@ -267,25 +267,35 @@ h1 span { color: var(--mint-deep); white-space: nowrap; }
 
 .swipe-hint { margin: 0; color: var(--muted); font-size: 11px; text-align: center; opacity: .75; }
 
-@media (max-width: 760px) {
+@media (max-width: 760px), (hover: none) and (pointer: coarse) and (max-width: 900px) {
   .scene { padding: 20px; }
   .bow { width: 82px; }
   h1 { font-size: clamp(36px, 12vw, 58px); }
   .wishes { grid-template-rows: auto 1fr auto; padding: 20px 14px 12px; }
   .postcard-stage {
     width: 100%;
-    grid-template-columns: 52px minmax(0, 1fr) 52px;
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
     gap: 2px;
   }
-  .postcard-stack { width: 100%; aspect-ratio: .78 / 1; }
+  .postcard-stack {
+    width: 100%;
+    height: clamp(430px, 68dvh, 560px);
+    aspect-ratio: auto;
+  }
   .postcard {
     grid-template-columns: 1fr;
-    grid-template-rows: 1.12fr 1px .88fr;
-    gap: 14px;
-    padding: 18px;
+    grid-template-rows: minmax(0, .92fr) 1px minmax(0, 1.08fr);
+    gap: 12px;
+    padding: 14px;
   }
   .postcard-divider { width: 100%; height: 1px; }
-  .postcard-message { padding: 0 4px; }
+  .postcard-message {
+    min-height: 0;
+    padding: 0 4px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
   .postcard-message h3 { margin: 8px 0 6px; font-size: 22px; }
   .postcard-message .message-text { font-size: 12px; line-height: 1.65; }
   .card-label { margin: 0; }
