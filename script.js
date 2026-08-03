@@ -19,6 +19,7 @@ const nextButton = document.querySelector("#next-card");
 function cardMarkup(card, originalIndex) {
   const article = document.createElement("article");
   article.className = "postcard";
+  article.classList.toggle("has-long-message", card.text.length > 90);
   article.dataset.card = originalIndex;
   article.setAttribute("aria-label", `第 ${originalIndex + 1} 张明信片`);
   article.innerHTML = `

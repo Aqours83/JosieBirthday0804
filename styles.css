@@ -183,6 +183,7 @@ h1 span { color: var(--mint-deep); white-space: nowrap; }
   transform-origin: 52% 52%;
   transition: transform .72s cubic-bezier(.22,.72,.18,1), opacity .45s ease, box-shadow .55s ease;
   will-change: transform, opacity;
+  overflow: hidden;
 }
 
 .postcard.is-leaving-next { animation: leave-next .68s cubic-bezier(.35,.05,.2,1) forwards; }
@@ -213,7 +214,9 @@ h1 span { color: var(--mint-deep); white-space: nowrap; }
   display: flex;
   flex-direction: column;
   min-width: 0;
+  min-height: 0;
   padding: 7% 2% 2%;
+  overflow: hidden;
 }
 
 .card-label {
@@ -223,20 +226,44 @@ h1 span { color: var(--mint-deep); white-space: nowrap; }
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
 
 .postcard-message h3 {
   margin: 15px 0 12px;
   font-size: clamp(22px, 3vw, 38px);
   letter-spacing: -.045em;
+  flex-shrink: 0;
 }
 
 .postcard-message .message-text {
   margin: 0;
+  min-height: 0;
+  padding-right: 8px;
   color: #58645f;
   font-family: "Noto Sans SC", sans-serif;
   font-size: clamp(13px, 1.45vw, 17px);
   line-height: 1.9;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(203, 102, 95, .45) transparent;
+}
+
+.postcard-message .message-text::-webkit-scrollbar { width: 5px; }
+.postcard-message .message-text::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(203, 102, 95, .4);
+}
+
+.postcard.has-long-message .postcard-message { padding-top: 3%; }
+.postcard.has-long-message .postcard-message h3 {
+  margin-block: 10px 8px;
+  font-size: clamp(21px, 2.4vw, 32px);
+}
+.postcard.has-long-message .message-text {
+  font-size: clamp(12px, 1.2vw, 15px);
+  line-height: 1.72;
 }
 
 .signature {
@@ -244,6 +271,7 @@ h1 span { color: var(--mint-deep); white-space: nowrap; }
   color: var(--red);
   font-size: 12px;
   font-style: italic;
+  flex-shrink: 0;
 }
 
 .nav-button {
