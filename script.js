@@ -23,7 +23,7 @@ function cardMarkup(card, originalIndex) {
   article.dataset.card = originalIndex;
   article.setAttribute("aria-label", `第 ${originalIndex + 1} 张明信片`);
   article.innerHTML = `
-    <img class="postcard-photo" src="${card.image}" alt="Josie 的照片 ${originalIndex + 1}" />
+    <img class="postcard-photo" data-src="${card.image}" alt="Josie 的照片 ${originalIndex + 1}" decoding="async" />
     <div class="postcard-divider" aria-hidden="true"></div>
     <div class="postcard-message">
       <p class="card-label">Happy birthday · 2026</p>
@@ -50,6 +50,16 @@ function buildStack() {
   applyOrder();
 }
 
+function loadVisibleImages() {
+  order.slice(0, 2).forEach((cardIndex) => {
+    const image = stack.querySelector(`[data-card="${cardIndex}"] .postcard-photo`);
+    if (!image.src) {
+      image.src = image.dataset.src;
+      image.removeAttribute("data-src");
+    }
+  });
+}
+
 function navigate(direction) {
   if (animating) return;
   animating = true;
@@ -66,6 +76,7 @@ function navigate(direction) {
   }
 
   requestAnimationFrame(() => applyOrder());
+  loadVisibleImages();
 
   window.setTimeout(() => {
     topCard.classList.remove("is-leaving-next", "is-leaving-prev");
@@ -76,6 +87,7 @@ function navigate(direction) {
 }
 
 document.querySelector("#open-wishes").addEventListener("click", () => {
+  loadVisibleImages();
   intro.classList.remove("is-active");
   intro.setAttribute("aria-hidden", "true");
   wishes.classList.add("is-active");
