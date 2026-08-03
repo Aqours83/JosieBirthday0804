@@ -284,15 +284,29 @@ h1 span { color: var(--mint-deep); white-space: nowrap; }
   }
   .postcard {
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(0, .92fr) 1px minmax(0, 1.08fr);
+    grid-template-rows: 220px 1px minmax(0, 1fr);
     gap: 12px;
     padding: 14px;
+    overflow: hidden;
   }
-  .postcard-divider { width: 100%; height: 1px; }
+  .postcard-photo {
+    grid-row: 1;
+    display: block;
+    width: 100%;
+    height: 220px;
+    min-height: 0;
+    max-height: 220px;
+    object-fit: cover;
+  }
+  .postcard-divider { grid-row: 2; width: 100%; height: 1px; }
   .postcard-message {
+    grid-row: 3;
+    position: relative;
+    z-index: 2;
     min-height: 0;
     padding: 0 4px;
     overflow-y: auto;
+    background: var(--paper);
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
   }
